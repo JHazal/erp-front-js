@@ -32,10 +32,11 @@ const tblInfoTuile = [
 
 // --- Variable pour l'utilisateur ---
 let currentUser = "";
+const API_URL = "http://localhost:5000";
 
 // --- Récupérer l'utilisateur depuis le backend ---
 function fetchCurrentUser() {
-  fetch("http://localhost:5000/currentUser")
+  fetch(API_URL + "/currentUser")
     .then((res) => res.json())
     .then(async (data) => {
       currentUser = data.user;
@@ -54,7 +55,8 @@ function fetchCurrentUser() {
 function runApp(command, allowedUsers) {
   const allowedList = allowedUsers.split(",").map((u) => u.trim());
   if (allowedList.includes("tous") || allowedList.includes(currentUser)) {
-    fetch("http://localhost:5000/run", {
+    const data = { action: "launch", target: command };
+    fetch(API_URL + "/run", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ command }),
