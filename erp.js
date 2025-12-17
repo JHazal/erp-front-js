@@ -59,7 +59,7 @@ function runApp(command, allowedUsers) {
     fetch(API_URL + "/run", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ command }),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => alert(data.message))
