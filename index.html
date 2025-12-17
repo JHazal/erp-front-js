@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portail ERP</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
+      .tuile-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .tuile {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .tuile:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Portail ERP</h1>
+    <p id="current-user">Utilisateur connecté : ...</p>
+    <div id="app"></div>
+
+    <script src="erp.js"></script>
+  </body>
+</html>
