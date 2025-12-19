@@ -3,37 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <title>Portail ERP</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-      h1 {
-        margin-bottom: 10px;
-      }
-      .tuile-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-      .tuile {
-        padding: 10px 20px;
-        cursor: pointer;
-        background-color: #eee;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-      .tuile:hover {
-        background-color: #ddd;
-      }
-    </style>
+    <link rel="stylesheet" href="main.css" />
+    <!-- Police Inter (Look moderne) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons (Icônes légères) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
-    <h1>Portail ERP</h1>
-    <p id="current-user">Utilisateur connecté : ...</p>
-    <div id="app"></div>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="header-title">
+          <h1>Portail ERP</h1>
+          <div class="user-info">
+            <i data-lucide="user-circle" width="16" height="16"></i>
+            <span id="current-user-display">Chargement...</span>
+          </div>
+        </div>
 
+        <div class="search-box">
+          <i data-lucide="search" width="20" height="20"></i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Rechercher un outil..."
+          />
+        </div>
+      </header>
+
+      <!-- Conteneur Principal -->
+      <main id="app-container">
+        <!-- Les sections seront injectées ici par JS -->
+      </main>
+
+      <!-- Footer -->
+      <footer>&copy; 2024 DSI - Portail Interne Sécurisé</footer>
+    </div>
     <script src="erp.js"></script>
   </body>
 </html>
